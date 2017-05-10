@@ -60,7 +60,14 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 //Write a function named evenFinder that is given nums as it's only argument and removes all values that aren't even from the given array.
 
   //Code Here
-
+function evenFinder(nums) {
+  for(var i = 0; i < nums.length; i++ ){
+    if(nums[i] % 2 !== 0) {
+      nums.splice(i,1);
+    }
+  }
+  return nums;
+}
 
 //Next problem
 
@@ -72,7 +79,20 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 
 
   //Code Here
+  var evenArray = [];
+  var oddArray = [];
+function divider(numbersArray){
+  for (var i = 0; i < numbersArray.length; i++) {
+    if(numbersArray[i] % 2 === 0){
+      evenArray.push(numbersArray[i]);
+    }
+    else {
+      oddArray.push(numbersArray[i]);
+    }
+  }
 
+  return [evenArray, oddArray];
+}
 
 //Next Problem
 
@@ -86,7 +106,15 @@ var getRandomArbitrary = function() {
 // Your job is to write a function named finder that will get a random number (by invoking getRandomArbitrary), then loop through the array (that will be passed in as a parameter) to see if that random number is in the array. If it is, return true, if it's not, return false
 
   //Code Here
-
+  function finder(arr) {
+    var num = getRandomArbitrary();
+      for(i = 0; i < arr.length; i++) {
+      if(arr[i] === num){
+        return true;
+      }
+    }
+    return false;
+  };
   //Code Here
 
 
@@ -98,7 +126,9 @@ var str = 'this is my sentence';
 //Write a function called reverse that takes a given str as it's only argument and returns that string after it's been reversed
 
   //Code Here
-
+  function reverse(str) {
+    return str.split("").reverse().join("");
+  }
 
 //Next Problem
 
@@ -120,6 +150,23 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
   //Code Here
+    function removeItem(myGroceryList, crossOff) {
+        for (var i = 0; i < myGroceryList.length; i++) {
+          if(myGroceryList[i] === crossOff){
+            myGroceryList.splice(i,1);
+          }
+        }
+        return myGroceryList;
+      }
+
+  function addItem(myGroceryList, writeIn) {
+    myGroceryList.push(writeIn);
+    return myGroceryList;
+  }
+
+  removeItem(myGroceryList, 'chips');
+  addItem(myGroceryList, 'Jerky');
+
 
 //removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
@@ -133,7 +180,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 
   //Code Here
-
+  function maker() {
+    var numbersTwoHund = [];
+    for (var i = 1; i < 216; i++) {
+      numbersTwoHund.push(i);
+    }
+    return numbersTwoHund;
+  }
 
 
 //Next Problem
@@ -144,7 +197,14 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 //array after adding ten to each item in numbers. *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 
   //Code Here
+  var newNums = [];
 
+    function addTen(numbers) {
+      for(var i = 0; i < numbers.length; i++){
+      newNums[i] = (parseInt(numbers[i]) + 10);
+      }
+      return newNums;
+    }
 
 
 //Next Problem
@@ -165,16 +225,34 @@ for(var i = 0; i < num2; i++){
 //Write a function called 'longer' that is given arr1 and arr2 as it's only arguments. Return the array which is longest.
 
   //Code Here
-
+function longer(arr1, arr2) {
+  if(arr1.length > arr2.length){
+    return arr1;
+  }
+  else {
+    return arr2;
+  }
+}
 
 /*As a continuation of the previous problem, write another function called 'both'.
-  Your 'both' function will be given two arguments, arr1 and arr2 (from the previous example).
+  Your 'both' function  will be given two arguments, arr1 and arr2 (from the previous example).
   'both' should return a new array with the matching numbers found in both arr1 and arr2.
   Example: var arr1 = [1,2,3,4]; var arr2 = [2,4,5,6]; newArray // [2,4]
 */
 
   //Code Here
+var newArray = [];
 
+function both(arr1, arr2){
+  for (var i = 0; i < arr1.length; i++) {
+    for (var j = 0; j < arr2.length; j++) {
+      if(arr1[i] === arr2[j]){
+       newArray.push(arr2[j]);
+      }
+    }
+  }
+  return newArray;
+}
 
 
 
